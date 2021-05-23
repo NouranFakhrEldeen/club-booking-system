@@ -16,13 +16,13 @@ import 'bootstrap/scss/bootstrap.scss';
 // import ConfirmSetList from './ConfirmSet/ConfirmSet.List';
 import {
   Home,
- 
 } from './';
 
 import {
  
   ErrorHandlingModal,
 } from '../components';
+import Activities from './Activities/Activities';
 
 
 const rootContainer = ({
@@ -40,6 +40,7 @@ const rootContainer = ({
       <Router>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/activities' component={Activities} />
     
         </Switch>
         {errorHanlder.DISPLAY_ERROR_MESSAGE_BOOLEAN && <ErrorHandlingModal />}
