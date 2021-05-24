@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Row } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
-import { Header } from '../../components';
+import { Header, Slider } from '../../components';
 import { connect } from 'react-redux';
 
 import './styles/style.scss';
@@ -21,7 +21,7 @@ const home = ({
     <div className='home-page'>
       <Header
       />
-
+      <Slider></Slider>
       <div className="container h-100">
       </div>
     </div>
