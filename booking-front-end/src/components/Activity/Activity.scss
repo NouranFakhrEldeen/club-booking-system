@@ -1,0 +1,31 @@
+.mainContainer{
+   border-color:lightgray;
+    border-width: 1px;
+    border-style: solid;
+    width: 374px;
+    height: 578px;
+    margin:20px 20px 0 20px;
+}
+.inner-container{
+    padding: 20px;
+}
+.activity-image{
+    width:100%
+}
+.title{
+    font-size: 21px;
+    color: "#060606";
+}
+.description{
+    font-size:18px;
+    color: "#7E7E7E";
+    padding-bottom:10px
+}
+.button {
+    font-size:17px;
+    height:42px;
+    border-color:black;
+    border-width: 1px;
+    border-style: solid;
+    background-color: white;
+}
