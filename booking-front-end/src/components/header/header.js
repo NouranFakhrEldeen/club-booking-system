@@ -15,10 +15,11 @@ export function NavBar({t:translate}) {
 
   useEffect(() => {
     if (i18n.language !== 'en') {
-      i18n.changeLanguage('fi');
+      i18n.changeLanguage('ar');
     }
   }, []);
   const changeLanguage = (lng) => {
+    window.location.reload();
     i18n.changeLanguage(lng);
   };
                                               
@@ -27,7 +28,7 @@ export function NavBar({t:translate}) {
     <div>
       <div 
       >
-        <Navbar scrolling dark expand="md" fixed="top">
+        <Navbar  expand="md" >
           <Navbar.Brand href="#home">
             <img
               className="d-block w-100"

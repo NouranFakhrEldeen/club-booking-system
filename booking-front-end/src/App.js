@@ -28,8 +28,13 @@ const App = ({ t: translate }) => {
       i18n.changeLanguage('ar');
       localStorage.setItem('lang', 'ar');
     }
+    if(i18n.language === 'ar') {
+      require('./styles/ar.scss');
+    } else {
+      require('./styles/eng.scss');
+    }
   };
-  // var hist = createBrowserHistory();
+
   return (
     <div>
 
