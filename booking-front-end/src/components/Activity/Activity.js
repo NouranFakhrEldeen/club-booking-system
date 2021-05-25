@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import { withTranslation } from 'react-i18next';
 import "./Activity.scss";
 
-const Activity=(props)=>{
-  const {image,title,description}=props
+const activity=(props)=>{
+  const {image,title,description , t:translate}=props
   return(
     <div className="mainContainer">
       <img src={image}
@@ -22,9 +22,10 @@ const Activity=(props)=>{
     </div>
   )
 }
-Activity.proptypes={
+activity.proptypes={
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
 }
-export default Activity
+
+export  const Activity = (withTranslation()(activity))

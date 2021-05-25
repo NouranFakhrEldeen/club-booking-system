@@ -16,13 +16,14 @@ import 'bootstrap/scss/bootstrap.scss';
 // import ConfirmSetList from './ConfirmSet/ConfirmSet.List';
 import {
   Home,
+  Activities
 } from './';
 
 import {
  
   ErrorHandlingModal,
 } from '../components';
-import Activities from './Activities/Activities';
+
 
 
 const rootContainer = ({

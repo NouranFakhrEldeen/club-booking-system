@@ -4,17 +4,24 @@ import React, { useEffect } from 'react';
 import './header.scss';
 import i18n from '../../i18n';
 
-import {Navbar, Nav, Carousel, Image} from 'react-bootstrap'
+import {Navbar, Nav} from 'react-bootstrap'
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 
 import  logo  from "../../images/logo.png";
 
 
-function header({
- 
-}) {
+export function NavBar({t:translate}) {
 
+  useEffect(() => {
+    if (i18n.language !== 'en') {
+      i18n.changeLanguage('fi');
+    }
+  }, []);
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+                                              
 
   return (
     <div>
@@ -31,11 +38,30 @@ function header({
           <Nav className="mr-auto">
          
           </Nav>
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#Activities">Activities</Nav.Link>
-          <Nav.Link href="#Gallery">Gallery</Nav.Link>
-          <Nav.Link href="#AboutUs">About As </Nav.Link>
+          <Nav.Link href="#home">{translate("header.home")}</Nav.Link>
+          <Nav.Link href="#Activities">{translate("header.activities")}</Nav.Link>
+          <Nav.Link href="#Gallery">{translate("header.gallery")}</Nav.Link>
+          <Nav.Link href="#AboutUs">{translate("header.aboutAs")} </Nav.Link>
+        
+      
+          <div className='language-switcher'>
+            {i18n.language === 'ar' &&
+          <button className='select-en' onClick={() => changeLanguage('en')}>
+          
+
+            <span className='d-inline-block margin-left-10'>English</span>
+          </button>}
+
+            {i18n.language === 'en' &&
+          <button className='select-fi' onClick={() => changeLanguage('ar')}>
+          
+            <span className='d-inline-block margin-left-10'>Arabic</span>
+          </button>}
+          </div>
+        
+          
         </Navbar>
+    
       </div>
      
 
@@ -44,14 +70,7 @@ function header({
   );
 }
 
-const addToProps = () => {
-  return {
-   
-  };
-};
+export const Header = (withTranslation()(NavBar));
 
-export const Header = connect(
-  addToProps
-)(withTranslation()(header));
 
 

@@ -62,9 +62,7 @@ function slider({
           </Carousel.Caption>
         </Carousel.Item>
      
-        <div className="title">
-          <h1>This is Awesome</h1>
-        </div>
+       
       </Carousel>
 
 
