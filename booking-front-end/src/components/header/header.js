@@ -28,7 +28,7 @@ export function NavBar({t:translate}) {
     <div>
       <div 
       >
-        <Navbar  expand="md" >
+        <Navbar scrolling dark fixed="top" expand="md" >
           <Navbar.Brand href="#home">
             <img
               className="d-block w-100"
