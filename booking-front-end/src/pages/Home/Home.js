@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Row } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
-import { Header, Slider } from '../../components';
+import { AboutUs, Gallery, Header, Slider } from '../../components';
 import { connect } from 'react-redux';
 
 import './styles/style.scss';
@@ -19,11 +19,11 @@ const home = ({
 
   return (
     <div className='home-page'>
-      <Header
-      />
+      <Header homePage/>
       <Slider></Slider>
-      <div className="container h-100">
-      </div>
+     
+      <AboutUs></AboutUs>
+      <Gallery></Gallery>
     </div>
   );
 };

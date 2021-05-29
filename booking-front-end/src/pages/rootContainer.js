@@ -9,11 +9,10 @@ import { connect } from 'react-redux';
 
 import '../styles/fonts/fontawesome.css';
 import '../styles/fonts/light.css';
-// import bootstrap
+
 import 'bootstrap/scss/bootstrap.scss';
 // eslint-disable-next-line no-unused-vars
-// import Audit from './Audit/Audit';
-// import ConfirmSetList from './ConfirmSet/ConfirmSet.List';
+
 import {
   Home,
   Activities
@@ -42,6 +41,7 @@ const rootContainer = ({
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/activities' component={Activities} />
+          <Route exact path='/home' component={Home} />
     
         </Switch>
         {errorHanlder.DISPLAY_ERROR_MESSAGE_BOOLEAN && <ErrorHandlingModal />}
