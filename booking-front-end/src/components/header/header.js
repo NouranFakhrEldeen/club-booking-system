@@ -67,8 +67,6 @@ export function NavBar({t:translate}) {
      
 
     
-    </div>
-  );
 }
 
 export const Header = (withTranslation()(NavBar));
