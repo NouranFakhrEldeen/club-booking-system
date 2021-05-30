@@ -42,7 +42,7 @@ export function NavBar({t:translate , homePage }) {
     <div>
       <div className={"header" }  style={{paddingBottom:  homePage ? "": "15%"}}>
         <Navbar collapseOnSelect expand="sm" fixed="top" style={{ transition: '1s ease',
-          backgroundColor: navBackground ? 'black' : 'transparent',
+          backgroundColor: navBackground ? '#222529' : 'transparent',
           backgroundImage: homePage ?'': ` linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${headerImage})`,
           backgroundRepeat:homePage ?'':  "no-repeat",
           backgroundSize:homePage ?'': "cover",

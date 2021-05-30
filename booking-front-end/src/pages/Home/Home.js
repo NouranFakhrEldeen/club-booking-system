@@ -6,6 +6,7 @@ import { AboutUs, Gallery, Header, Slider } from '../../components';
 import { connect } from 'react-redux';
 
 import './styles/style.scss';
+import { Footer } from '../../components/Footer/Footer';
 
 // import i18n from '../../i18n';
 
@@ -24,6 +25,7 @@ const home = ({
      
       <AboutUs></AboutUs>
       <Gallery></Gallery>
+      <Footer></Footer>
     </div>
   );
 };

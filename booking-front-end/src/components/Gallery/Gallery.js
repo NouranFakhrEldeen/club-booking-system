@@ -122,7 +122,7 @@ const PhotoGallery = createClass({
       <div className= "container">
       
         <div className="overlay-photogallery">
-          <h1 className="title">Gallery</h1>
+          <h1 className="title"> <b>Gallery</b></h1>
           <div className="filter-panel">
             <a className="resetBtn" onClick={this.resetFilter}> All </a>
             {
