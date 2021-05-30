@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Gallery} from '../../components'
+import { Header, Gallery, Footer} from '../../components'
 
 import { withTranslation } from 'react-i18next';
 
@@ -14,7 +14,7 @@ const gallery=(props)=>{
 
       <Gallery></Gallery>
      
-     
+      <Footer/>
     </div>
 
   )

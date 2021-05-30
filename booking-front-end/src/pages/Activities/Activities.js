@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Activity} from '../../components'
+import { Header, Activity, Footer} from '../../components'
 
 import ActivityItems from "./ActivityItems";
 import { withTranslation } from 'react-i18next';
@@ -26,7 +26,7 @@ const activities=(props)=>{
         {renderActivities()}
       </div>
      
-     
+      <Footer/>
     </div>
 
   )

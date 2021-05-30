@@ -4,3 +4,4 @@ export * from './error-handling-modal/error-handling-modal';
 export * from './Activity/Activity'
 export * from "./About-us/AboutUs"
 export * from "./Gallery/Gallery"
+export * from "./Footer/Footer"
