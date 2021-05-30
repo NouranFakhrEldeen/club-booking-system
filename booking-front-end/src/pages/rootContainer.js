@@ -15,12 +15,13 @@ import 'bootstrap/scss/bootstrap.scss';
 
 import {
   Home,
-  Activities
+  Activities,
+  GalleryContainer
 } from './';
 
 import {
  
-  ErrorHandlingModal,
+  ErrorHandlingModal, Gallery,
 } from '../components';
 
 
@@ -42,7 +43,7 @@ const rootContainer = ({
           <Route exact path='/' component={Home} />
           <Route exact path='/activities' component={Activities} />
           <Route exact path='/home' component={Home} />
-    
+          <Route exact path='/Gallery' component={GalleryContainer} />
         </Switch>
         {errorHanlder.DISPLAY_ERROR_MESSAGE_BOOLEAN && <ErrorHandlingModal />}
       </Router>
