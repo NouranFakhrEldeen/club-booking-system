@@ -22,6 +22,6 @@ i18n
       wait: true,
     },
   });
-i18n.defaultLocale = 'en';
+i18n.defaultLocale = 'ar';
 
 export default i18n ;

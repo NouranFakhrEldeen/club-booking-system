@@ -1,0 +1,124 @@
+.PhotoGallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 100%;
+  justify-content: center;
+  margin: 30px 0 40px 0;
+  text-align: center;
+  .column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    // max-width: 25%;
+    padding: 0 4px;
+  }
+}
+.overlay-photogallery {
+  .title {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+.photo-container {
+  position: relative;
+  animation: fadeUP 0.5s;
+  display: inline-flex;
+}
+.photo-container {
+  img {
+    width: 300px;
+    height: 250px;
+    left: 0;
+    object-fit: cover;
+    // border-radius: 20px;
+    box-shadow: 0 10px 15px #a8b4fc30;
+    margin: 5px;
+    // margin-top: 8px;
+    // vertical-align: middle;
+    // width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 10px 10px;
+  }
+
+  figure {
+    z-index: 1;
+    min-width: 300px;
+    overflow: hidden;
+    margin: 0 5px;
+    animation: show 0.8s ease;
+  }
+}
+@keyframes fadeUP {
+  from {
+    top: -40px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.filter-panel {
+  //   display: flex;
+  padding: 25px;
+  //   justify-content: center;
+  //   align-items: center;
+  text-align: center;
+}
+
+.filter-panel a {
+  display: inline-block;
+
+  position: relative;
+  padding: 10px 25px;
+  font-size: 20px;
+  color: white;
+
+  margin: 5px 15px;
+  transition: 0.25s ease-in;
+  border-radius: 4px;
+  font-family: 'Segoe UI', 'Open Sans', sans-serif;
+  cursor: pointer;
+}
+
+.filter-panel a:hover {
+  background: #01139e;
+  color: white;
+}
+
+.filter-panel a.active {
+  top: -8px;
+  background: #01139e;
+  color: white;
+}
+
+.filter-panel a.resetBtn {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  //   overflow: hidden;
+  outline: none;
+  color: black;
+}
+
+.filter-panel a.resetBtn:hover {
+  background: #01139e;
+  color: white;
+}
+.filter-panel a.resetBtn:active {
+  background: #01139e;
+  color: white;
+}

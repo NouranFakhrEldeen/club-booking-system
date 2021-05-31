@@ -1,0 +1,22 @@
+// .title {
+//   text-align: center;
+//   margin-top: 20px;
+//   padding: 10px;
+//   text-shadow: 2px 2px #000;
+//   color: #fff;
+// }
+
+.homePage-carousel {
+  .carousel img {
+    max-height: 600px;
+    min-width: auto;
+    height: 600px;
+
+    @media screen and (max-width: 768px) {
+      height: 400px;
+    }
+    @media screen and (max-width: 600px) {
+      height: 300px;
+    }
+  }
+}

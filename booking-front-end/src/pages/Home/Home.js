@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Row } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
-import { Header } from '../../components';
+import { AboutUs, Gallery, Header, Slider } from '../../components';
 import { connect } from 'react-redux';
 
 import './styles/style.scss';
+import { Footer } from '../../components/Footer/Footer';
 
 // import i18n from '../../i18n';
 
@@ -19,11 +20,12 @@ const home = ({
 
   return (
     <div className='home-page'>
-      <Header
-      />
-
-      <div className="container h-100">
-      </div>
+      <Header homePage/>
+      <Slider></Slider>
+     
+      <AboutUs></AboutUs>
+      <Gallery></Gallery>
+      <Footer></Footer>
     </div>
   );
 };

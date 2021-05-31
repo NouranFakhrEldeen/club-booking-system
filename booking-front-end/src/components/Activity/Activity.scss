@@ -1,56 +1,64 @@
-.mainContainer{
-   border-color:lightgray;
-    border-width: 1px;
-    border-style: solid;
-    width: 374px;
-    margin:20px 20px 0 20px;
+.mainContainer {
+  border-color: lightgray;
+  border-width: 1px;
+  border-style: solid;
+  width: 374px;
+  height: 578px;
+  margin: 20px 20px 0 20px;
 }
-.inner-container{
-    padding: 10px 20px 0px 20px;
+.inner-container {
+  padding: 10px 20px 0px 20px;
 }
-.activity-image{
-    width:100%
+.activity-image {
+  width: 100%;
 }
-.title{
-    font-size: 21px;
-    color: "#060606";
+.title {
+  font-size: 21px;
+  color: '#060606';
 }
-.description{
-    font-size:18px;
-    color: "#7E7E7E";
-    padding-bottom:10px;
-    
+.description {
+  font-size: 18px;
+  color: '#7E7E7E';
+  padding-bottom: 10px;
+  display: -webkit-box;
+  max-width: 400px;
+  height: 120px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.625;
 }
 .button {
-    font-size:17px;
-    margin:0px 20px 12px 20px;
-    height:42px;
-    border-color:black;
-    border-width: 1px;
-    border-style: solid;
-    background-color: white;
+  font-size: 17px;
+  height: 42px;
+  margin:0px 20px 12px 20px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  background-color: white;
 }
 .activityBottomDetails{
-    display: flex;
-    height: 40px;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border-top-width: 1px;
-    border-top-color: lightgray;
-    border-top-style: solid;
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-top-width: 1px;
+  border-top-color: lightgray;
+  border-top-style: solid;
 }
 .seperator{
-    border: 1px;
-    border-color: lightgray;
-    border-style: solid; 
+  border: 1px;
+  border-color: lightgray;
+  border-style: solid; 
 }
 .details{
-    font-size:16;
-    padding-top:8px
+  font-size:16;
+  padding-top:8px
 }
 .hourDetails{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

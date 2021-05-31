@@ -12,14 +12,29 @@ import { PersistGate } from 'redux-persist/integration/react';
 // eslint-disable-next-line no-unused-vars
 import { persistStore, persistReducer } from 'redux-persist';
 import { RootContainer } from './pages';
-
+import { cookiesHandler } from './helpers';
+import i18n from './i18n';
 // eslint-disable-next-line no-unused-vars
 const App = ({ t: translate }) => {
   // eslint-disable-next-line no-unused-vars
   let persistor = persistStore(store);
 
+  useEffect(() => {
+    setuplang();
+  }, []);
+  const setuplang = () => {
+    i18n.changeLanguage(cookiesHandler.get('lang') || i18n.language);
+    if (i18n.language !== 'en') {
+      i18n.changeLanguage('ar');
+      localStorage.setItem('lang', 'ar');
+    }
+    if(i18n.language === 'ar') {
+      require('./styles/ar.scss');
+    } else {
+      require('./styles/eng.scss');
+    }
+  };
 
-  // var hist = createBrowserHistory();
   return (
     <div>
 

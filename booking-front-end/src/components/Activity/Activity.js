@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { withTranslation } from 'react-i18next';
 import Icon from 'react-web-vector-icons';
 
-import "./Activity.scss";
 import i18n from '../../i18n';
 
-const Activity=(props)=>{
-  const {image,title,description,isActivityScreen,cost,time}=props
+import "./Activity.scss";
+
+const activity=(props)=>{
+  const {image,title,description,isActivityScreen,cost,time,t:translate}=props
 
   const renderButton=()=>{
     if(!isActivityScreen){
@@ -51,13 +53,13 @@ const Activity=(props)=>{
   )
 }
 
-Activity.defaultProps={
+activity.defaultProps={
   isActivityScreen:true,
   cost:0,
   time:null
 }
 
-Activity.proptypes={
+activity.proptypes={
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -65,4 +67,5 @@ Activity.proptypes={
   cost: PropTypes.number,
   time: PropTypes.string
 }
-export default Activity
+
+export const Activity = (withTranslation()(activity))

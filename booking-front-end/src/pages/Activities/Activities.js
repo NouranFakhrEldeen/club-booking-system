@@ -1,13 +1,12 @@
 import React from 'react'
-import { Header} from '../../components'
-
-import Activity from '../../components/Activity/Activity'
+import { Header, Activity, Footer} from '../../components'
 
 import ActivityItems from "./ActivityItems";
+import { withTranslation } from 'react-i18next';
 
 import './styles/styles.scss'
 
-const Activities=(props)=>{
+const activities=(props)=>{
   const {}=props
   const renderActivities=()=>{
     return ActivityItems.map((item,index)=>(
@@ -27,10 +26,10 @@ const Activities=(props)=>{
         {renderActivities()}
       </div>
      
-     
+      <Footer/>
     </div>
 
   )
 }
 
-export default Activities
+export  const Activities = (withTranslation()(activities))
