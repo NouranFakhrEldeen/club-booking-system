@@ -16,6 +16,7 @@ const Activities=(props)=>{
         title={item.title}
         image={item.img}
         description={item.description}
+        isActivityScreen={false}
       />  
     ))
   }
