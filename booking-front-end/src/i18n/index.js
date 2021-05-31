@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next';
 
 
 // languages
-import fi from './langs/fi.json';
+import ar from './langs/ar.json';
 import en from './langs/en.json';
 
 
@@ -13,15 +13,15 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      fi,
+      ar,
       en,
     },
-    fallbackLng: 'fi',
+    fallbackLng: 'ar',
     initImmediate: false,
     react: {
       wait: true,
     },
   });
-i18n.defaultLocale = 'fi';
+i18n.defaultLocale = 'en';
 
 export default i18n ;
