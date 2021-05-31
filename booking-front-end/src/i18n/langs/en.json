@@ -19,7 +19,11 @@
       "home": "Home",
       "activities": "activities",
       "gallery": "gallery",
-      "aboutAs": "about As"
-    }
+      "aboutAs": "about Us"
+    },
+    "aboutUs":{
+      "more":"More",
+      "title":"About us"
+  }
   }
 }

@@ -20,6 +20,10 @@
       "activities": "الانشطة",
       "gallery": "الصور",
       "aboutAs": "تعرف عنا"
+    },
+    "aboutUs":{
+      "more":"المزيد",
+    "title":"تعرف عنا"
     }
   }
 }

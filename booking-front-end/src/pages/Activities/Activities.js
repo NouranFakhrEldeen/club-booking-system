@@ -15,14 +15,12 @@ const activities=(props)=>{
         title={item.title}
         image={item.img}
         description={item.description}
-        isActivityScreen={false}
       />  
     ))
   }
   return (
     <div>
       <Header/>
-
       <div className="activities-Container">
         {renderActivities()}
       </div>
