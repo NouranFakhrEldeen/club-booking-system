@@ -2,13 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next';
 import Icon from 'react-web-vector-icons';
+import Shimmer from "react-shimmer-effect";
+import injectSheet from "react-jss";
 
 import i18n from '../../i18n';
 
 import "./Activity.scss";
 
+import StyleSheet from "./ActivityLoadingStyles";
+
 const activity=(props)=>{
-  const {image,title,description,isActivityScreen,cost,time,t:translate}=props
+  const {image,title,description,isActivityScreen,cost,time,t:translate,isLoading,classes}=props
 
   const renderButton=()=>{
     if(!isActivityScreen){
@@ -37,18 +41,54 @@ const activity=(props)=>{
       </button>
     )
   }
+  const renderContent=()=>{
+    if(isLoading){
+      return(
+        <>
+          <Shimmer>
+            <div className={classes.line} />
+          </Shimmer>
+          <Shimmer>
+            <div className={classes.container}>
+              <div className={classes.title} />
+            </div>
+          </Shimmer>
+         
+          <div className={classes.descriptionContainer}>
+            {Array(3).fill(0).map((item,value)=>(
+              <Shimmer>
+                <div className={classes.description} />
+              </Shimmer>
+            ))}
+          </div>
+          <div className={classes.bottomContainer}>
+            {Array(2).fill(0).map((_,index)=>(
+              <Shimmer>
+                <div className={classes.bottomShimmer} />
+              </Shimmer>
+            ))}
+          </div>
+        </>
+      )
+    }
+    return (
+      <>
+        <img src={image}
+          alt={title}
+          className="activity-image"
+        />
+        <div className="inner-container" >
+          <p className="title">{title} </p>
+          <p className="description">{description}</p>
+        </div>
+        {renderButton()}  
+      </>
+
+    )
+  }
   return(
     <div className="mainContainer">
-      <img src={image}
-        alt={title}
-        className="activity-image"
-      />
-      <div className="inner-container" >
-        <p className="title">{title} </p>
-        <p className="description">{description}</p>
-      </div>
-      {renderButton()}
-
+      {renderContent()}
     </div>
   )
 }
@@ -56,7 +96,8 @@ const activity=(props)=>{
 activity.defaultProps={
   isActivityScreen:true,
   cost:0,
-  time:null
+  time:null,
+  isLoading:false
 }
 
 activity.proptypes={
@@ -65,7 +106,8 @@ activity.proptypes={
   description: PropTypes.string.isRequired,
   isActivityScreen: PropTypes.bool,
   cost: PropTypes.number,
-  time: PropTypes.string
+  time: PropTypes.string,
+  isLoading: PropTypes.bool
 }
 
-export const Activity = (withTranslation()(activity))
+export const Activity = (withTranslation()(injectSheet(StyleSheet)(activity)))

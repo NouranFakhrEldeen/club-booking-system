@@ -7,22 +7,30 @@
     font-family: Arial;
     // font-size: 2em;
     color: black;
-    top: 0;
+    top: 15em;
     left: auto;
     bottom: 0;
-    right: 0;
+    right: 25px;
     z-index: 100;
     width: 40%;
     position: absolute;
   }
 }
-
+.centerText{
+  font-family: 'Segoe UI';
+  font-size:21;
+  color:white;
+}
 .overlay img {
   position: relative;
   z-index: 1;
   width: 100%;
 }
-
+.text{
+  font-family: 'Segoe UI';
+  font-size:32;
+  color:white;
+}
 .overlay:after {
   position: absolute;
   content: '';
@@ -40,3 +48,15 @@
     rgba(255, 0, 0, 0) 100%
   );
 }
+.moreButton{
+  border-radius:29px;
+  border-color:white;
+  border-width: 2px;
+  background-color: transparent;
+  height:66px;
+  width:153px;
+  font-size: 32px;
+  font-family: 'Segoe UI';
+  color:white;
+}
+
