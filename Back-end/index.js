@@ -22,7 +22,7 @@ const swaggerOptions = {
           description: "A REST API built with Express and MongoDB."
       },
   },
-   apis: ["./controllers/category.controller.js"]
+   apis: ["./controllers/category.controller.js","./controllers/booking.controller.js"]
   // apis:['index.js'], 
 }
 
@@ -40,23 +40,3 @@ app.listen(port, () => {
 
 app.use(express.static('public'));
 
-/** 
- * @swagger 
- * /Employees: 
- *   get: 
- *     description: Get all Employee 
- *     responses:  
- *       200: 
- *         description: Success  
- *   
- */  
- app.get('/Employees',(req,res)=>{  
-  res.send([  
-      {  
-          id:1, Name:'Jk'  
-      },  
-      {  
-          id:2,Name:'Jay'  
-      }  
-  ])  
-});

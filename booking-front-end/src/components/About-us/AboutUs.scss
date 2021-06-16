@@ -7,20 +7,28 @@
     font-family: Arial;
     // font-size: 2em;
     color: black;
-    top: 15em;
+    top: 6em;
     left: auto;
     bottom: 0;
     right: 25px;
     z-index: 100;
     width: 40%;
     position: absolute;
+    @media screen and (max-width: 768px) {
+      top: 20em;
+    }
+   
   }
 }
 .centerText{
   font-family: 'Segoe UI';
   font-size:21;
   color:white;
+  @media screen and (max-width: 600px) {
+    font-size:18;
+  }
 }
+
 .overlay img {
   position: relative;
   z-index: 1;
@@ -30,6 +38,9 @@
   font-family: 'Segoe UI';
   font-size:32;
   color:white;
+  @media screen and (max-width: 600px) {
+    font-size:18;
+  }
 }
 .overlay:after {
   position: absolute;
@@ -53,9 +64,9 @@
   border-color:white;
   border-width: 2px;
   background-color: transparent;
-  height:66px;
-  width:153px;
-  font-size: 32px;
+  height:60px;
+  width:140px;
+  font-size: 25px;
   font-family: 'Segoe UI';
   color:white;
 }
