@@ -44,6 +44,7 @@ router.post("", async (req, res) => {
         to : "amirmorcos12345@gmail.com",
         subject: 'Confirmation ',
         text: 'you booked this activity successfully'
+        // name , age , email , mobiel number ,money 
       };
       
       transporter.sendMail(mailOptions, function(error, info){

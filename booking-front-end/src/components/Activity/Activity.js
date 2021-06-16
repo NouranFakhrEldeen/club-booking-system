@@ -4,16 +4,20 @@ import { withTranslation } from 'react-i18next';
 import Icon from 'react-web-vector-icons';
 import Shimmer from "react-shimmer-effect";
 import injectSheet from "react-jss";
-
 import i18n from '../../i18n';
-
+import { useHistory } from 'react-router-dom';
 import "./Activity.scss";
 
 import StyleSheet from "./ActivityLoadingStyles";
 
-const activity=(props)=>{
-  const {image,title,description,isActivityScreen,cost,time,t:translate,isLoading,classes}=props
-
+const ActivityItem=(props)=>{
+  const {image,title,description,isActivityScreen,cost,time,t:translate,isLoading,classes,activityId}=props
+  let history = useHistory();
+  const handleClick=()=>{
+    console.log("activityId",activityId)
+    console.log("props1111", props )
+    history.push({pathname:`activityDetails/${activityId}`, state:props})
+  }
   const renderButton=()=>{
     if(!isActivityScreen){
       return (
@@ -36,8 +40,9 @@ const activity=(props)=>{
       )
     }
     return (
-      <button className="button">
+      <button className="button" onClick={handleClick}>
         {i18n.t('activity.viewActivity')}
+
       </button>
     )
   }
@@ -93,14 +98,14 @@ const activity=(props)=>{
   )
 }
 
-activity.defaultProps={
+ActivityItem.defaultProps={
   isActivityScreen:true,
   cost:0,
   time:null,
   isLoading:false
 }
 
-activity.proptypes={
+ActivityItem.proptypes={
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -110,4 +115,4 @@ activity.proptypes={
   isLoading: PropTypes.bool
 }
 
-export const Activity = (withTranslation()(injectSheet(StyleSheet)(activity)))
+export const Activity = (withTranslation()(injectSheet(StyleSheet)(ActivityItem)))

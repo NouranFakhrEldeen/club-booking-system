@@ -15,6 +15,7 @@ const activities=(props)=>{
         title={item.title}
         image={item.img}
         description={item.description}
+        activityId={item.activityId}
       />  
     ))
   }
