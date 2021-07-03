@@ -60,4 +60,29 @@ router.post("", async (req, res) => {
   }
 });
 
+router.post("/getAvailableSlot", async(req, res)=>{
+  var data = req.body;
+  var from = data.from
+var to = data.to 
+  var slotsToBook = await Booking.find()
+  .where('from').lt(to)
+  .where('to').gt(from)
+  .exec();
+console.log("slotsToBook", slotsToBook)
+
+// slotsToBook.forEach(async (slot) => {
+//   if (slot) {
+//       console.log(`Damn, the slot at ${slot.time} is already booked`); 
+//   } else {
+//       await Slot.findByIdAndUpdate(
+//           slot._id,
+//           {$set: {
+               
+//             id: data._id
+//           }}
+//       );
+//       console.log(`Just booked the ${slot.time} slot !`);
+//   }
+// });
+})
 module.exports = router;

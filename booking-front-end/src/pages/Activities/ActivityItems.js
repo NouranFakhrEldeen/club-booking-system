@@ -8,7 +8,8 @@ const items=[{
   img:Images.football.default,
   cost:100,
   time:'1 Hour',
-  activityId: 1
+  activityId: 1,
+  Images:[Images.football , Images.football2]
 },{
   title:i18n.t('activity.crossfit'),
   description:i18n.t('activity.crossfitDescription'),

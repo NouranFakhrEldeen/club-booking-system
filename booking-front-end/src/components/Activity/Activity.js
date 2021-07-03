@@ -5,7 +5,7 @@ import Icon from 'react-web-vector-icons';
 import Shimmer from "react-shimmer-effect";
 import injectSheet from "react-jss";
 import i18n from '../../i18n';
-import { useHistory } from 'react-router-dom';
+import { useHistory , Link } from 'react-router-dom';
 import "./Activity.scss";
 
 import StyleSheet from "./ActivityLoadingStyles";
@@ -14,9 +14,8 @@ const ActivityItem=(props)=>{
   const {image,title,description,isActivityScreen,cost,time,t:translate,isLoading,classes,activityId}=props
   let history = useHistory();
   const handleClick=()=>{
-    console.log("activityId",activityId)
-    console.log("props1111", props )
-    history.push({pathname:`activityDetails/${activityId}`, state:props})
+   
+   history.push(`activityDetails/${activityId}`)
   }
   const renderButton=()=>{
     if(!isActivityScreen){
@@ -39,11 +38,16 @@ const ActivityItem=(props)=>{
         </div>
       )
     }
-    return (
-      <button className="button" onClick={handleClick}>
+    return ( 
+    <Link to={{
+      pathname: `activityDetails/${activityId}`,
+      
+    }}
+  >
+      <button className="button">
         {i18n.t('activity.viewActivity')}
-
       </button>
+        </Link>
     )
   }
   const renderContent=()=>{
