@@ -40,10 +40,10 @@ router.post("", async (req, res) => {
       
       var mailOptions = {
         from: 'nouranahmed44@gmail.com',
-        // to: 'nouranfakhreldeen@outlook.com',
-        to : "amirmorcos12345@gmail.com",
-        subject: 'Confirmation ',
-        text: 'you booked this activity successfully'
+         to: 'nouranfakhreldeen@outlook.com',
+        // to : "amirmorcos12345@gmail.com",
+        subject: 'Booking Confirmation from Saint George Sports and Cultural Center ',
+        text: 'Hello Mr./Mrs./Ms. '+data.firstName+ data.lastName+'\n Thank you for booking with us at Saint George Sports and Cultural Center \n You have booked for \n Football Court  \n Date: '+data.day+'\n Time: '+ data.from +'-' +data.to+'\n To confirm your booking, please proceed with the payment of \n '+ data.price+' EGP \n You can have your payment through either of the below \n 1-	Cash, directly to xxxx ## \n 2-	Orange Cash ## \n 3-	Vodafone Cash ## \n Please send us a copy of the payment confirmation to confirm your booking. \n Please have the payment completed within 48 hours or else the booking will be cancelled. \n In case you needed to cancel your booking, please notify xxxx #### at least 24 hours before the booking date/time (for full/partial refund) \n '+data.firstName+ data.lastName+'أهلًا أستاذ : \n شكرًا للحجز معنا في مركز سان جورج للرياضة والثقافة\n لقد أتممت الحجز في: \n ملعب الكرة \n   بتاريخ: '+data.day+ '\n الساعة:'+data.from + '-'+data.to+'\n لتأكيد الحجز، برجاء دفع مبلغ قدره: '+data.price+'جنيه مصري. \n يمكنك الدفع باستخدام أي من الوسائل الآتية: \n 1- بالكاش مباشرةً لـ...... \n 2- أورانج كاش \n 3- فودافون كاش \n برجاء إرسال نسخة من إيصال الدفع لتأكيد الحجز. \n برجاء إتمام عملية الدفع خلال مدة لا تزيد عن ٤٨ ساعة، لنتجنب إلغاء الحجز. \n إذا أردت إلغاء عملية الحجز، برجاء إبلاغ xxxxx قبل موعد الحجز بـ ٢٤ ساعة على الأقل لاسترداد قيمة المبلغ المدفوع (كليًا أو جزئيًا).'
         // name , age , email , mobiel number ,money 
       };
       
