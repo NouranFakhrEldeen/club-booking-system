@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next';
 import { Redirect, useLocation , useParams } from "react-router-dom";
 import { Header, Footer , Activity , DatePickerComp} from '../../components'
-import {ListGroup, ListGroupItem} from 'react-bootstrap'
-
+import {ListGroup, ListGroupItem, Form , Row } from 'react-bootstrap'
+import DatePicker from 'react-datepicker';
 
 import ActivityItems from "../Activities/ActivityItems";
 const ActivityDetail=()=>{
@@ -14,24 +14,16 @@ const  match= useParams()
  console.log("data",data )
   const [active , setActive] = useState("Photos")
   console.log("active",active ) 
-  const [date, setDate] = useState({
-    from: '',
-    to: '',
+
+  const [dayDate, setDayDate] = useState('');
   
-  });
-  const [fromDate, setFromDate] = useState('');
-  const [toDate, setToDate] = useState('');
-const  datePickerFromOnChange = (e) => {
-    const formatFromDate = e;
-    setDate({ ...date, from: formatFromDate });
-    setFromDate(formatFromDate);
+const  datePickerDayOnChange = (e) => {
+    const formatDayDate = e;
+
+    setDayDate(formatDayDate);
   };
 
-const  datePickerToOnChange = (e) => {
-    const formatToDate = e;
-    setDate({ ...dateFilteration, to: formatToDate });
-    setToDate(formatToDate);
-  };
+
 
   const renderSubscriptionPrices=()=>{
     return (
@@ -93,7 +85,54 @@ return (
             }
           {active ==="Booking" &&
               <div >
-                  <form>
+                <Form>
+  
+    <Row>
+    <Form.Group className="col" controlId="formGroupEmail">
+    <Form.Label>First Name</Form.Label>
+    <Form.Control type="text" placeholder="firstName"/>
+  </Form.Group>
+  <Form.Group  className="col"controlId="formGroupEmail">
+    <Form.Label>last Name</Form.Label>
+    <Form.Control type="text" placeholder="lastName"/>
+  </Form.Group>
+    </Row>
+    <Row>
+    <Form.Group className="col" controlId="formGroupEmail">
+    <Form.Label>Mobile nubmer</Form.Label>
+    <Form.Control type="number" placeholder="Mobile nubmer"/>
+  </Form.Group>
+    </Row>
+    <Row>
+    <Form.Group  className="col"  controlId="formGroupEmail">
+    <Form.Label>Email Address</Form.Label>
+    <Form.Control type="email" placeholder="Email Address"/>
+  </Form.Group>
+    </Row>
+    <Row>
+    <Form.Group className="col" controlId="formGroupEmail">
+    <Form.Label>Day</Form.Label>
+    <DatePickerComp
+        classesWrapper={'form-group datePickerFromTo  d-flex'}
+        dayDate={dayDate}
+        
+        datePickerDayOnChange={datePickerDayOnChange}
+       
+      />
+  </Form.Group>
+  <Form.Group  className="col"controlId="formGroupEmail">
+    <Form.Label>From</Form.Label>
+    <Form.Control  as="select" defaultValue="Choose..." placeholder="firstName"/>
+  </Form.Group>
+  <Form.Group  className="col"controlId="formGroupEmail">
+    <Form.Label>To</Form.Label>
+    <Form.Control as="select" defaultValue="Choose..." placeholder="firstName"/>
+  </Form.Group>
+    </Row>
+
+ 
+</Form>
+                  {/* <form>
                      <input placeholder="firstName"></input> 
                      <input placeholder="lastName"></input> 
                      <input placeholder="email"></input> 
@@ -106,7 +145,7 @@ return (
         datePickerToOnChange={datePickerToOnChange}
       />
                      
-                  </form>
+                  </form> */}
             </div>
             }
         

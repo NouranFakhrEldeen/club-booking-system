@@ -4,10 +4,9 @@ import './datePickerFromTo.scss';
 
 function datePickerComp({
   classesWrapper,
-  fromDate,
-  toDate,
-  datePickerFromOnChange,
-  datePickerToOnChange,
+  dayDate,
+  datePickerDayOnChange,
+
 }) {
   return (
     <div className={classesWrapper}>
@@ -18,9 +17,9 @@ function datePickerComp({
         </div>
         <div className='d-inline-block input-have-left-icon'>
           <DatePicker
-            selected={fromDate}
+            selected={dayDate}
             className="form-control min-height-100"
-            onChange={(e) => datePickerFromOnChange(e)}
+            onChange={(e) => datePickerDayOnChange(e)}
             dateFormat="d.M.yyyy"
             name='from'
             data-testid={'datePicker1'}
@@ -28,21 +27,7 @@ function datePickerComp({
           />
         </div>
       </div>
-      <div className='position-relative d-inline-block'>
-        <div className='input-icon-left d-inline-block bg-white border-left-0'>
-          {/* eslint-disable-next-line max-len */}
-          <span className={'fas fa-minus margin-left-2'} />
-        </div>
-        <div className='d-inline-block input-have-left-icon'>
-          <DatePicker
-            selected={toDate}
-            className="form-control min-height-100"
-            onChange={(e) => datePickerToOnChange(new Date(new Date(e).getTime() + (1000 * 60 * 60 * 24) - 1))}
-            dateFormat="d.M.yyyy"
-            name='to'
-          />
-        </div>
-      </div>
+     
     </div>
   );
 }
