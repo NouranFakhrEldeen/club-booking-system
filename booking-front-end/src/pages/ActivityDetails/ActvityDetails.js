@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next';
 import { Redirect, useLocation , useParams } from "react-router-dom";
 import { Header, Footer , Activity , DatePickerComp} from '../../components'
-import {ListGroup, ListGroupItem, Form , Row } from 'react-bootstrap'
+import {ListGroup, ListGroupItem, Form , Row , Button } from 'react-bootstrap'
 import DatePicker from 'react-datepicker';
 
 import ActivityItems from "../Activities/ActivityItems";
@@ -49,11 +49,7 @@ return (
 
         
         <div className= "col-md-3 col-sm-12"
-        //   style={{
-        //      padding: "10px",
-        //     width: "30%",
-        //      background: "#f0f0f0",
-        //   }}
+     
         >
       
         <ListGroup style={{ background: "#f0f0f0",}}>
@@ -127,6 +123,7 @@ return (
     <Form.Control as="select" defaultValue="Choose..." placeholder="firstName"/>
   </Form.Group>
     </Row>
+    <Button type="submit" >submit</Button>
 </Form>
             </div>
             }
