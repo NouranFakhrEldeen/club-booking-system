@@ -48,7 +48,7 @@ return (
         <div className="row mt-5 mb-5">
 
         
-        <div className= "col-3"
+        <div className= "col-md-3 col-sm-12"
         //   style={{
         //      padding: "10px",
         //     width: "30%",
@@ -86,19 +86,18 @@ return (
           {active ==="Booking" &&
               <div >
                 <Form>
-  
     <Row>
-    <Form.Group className="col" controlId="formGroupEmail">
+    <Form.Group className="col-md-6 col-sm-12" controlId="formGroupFirstName">
     <Form.Label>First Name</Form.Label>
     <Form.Control type="text" placeholder="firstName"/>
   </Form.Group>
-  <Form.Group  className="col"controlId="formGroupEmail">
+  <Form.Group  className="col"controlId="formGroupLastName">
     <Form.Label>last Name</Form.Label>
     <Form.Control type="text" placeholder="lastName"/>
   </Form.Group>
     </Row>
     <Row>
-    <Form.Group className="col" controlId="formGroupEmail">
+    <Form.Group className="col" controlId="formGroupPhone">
     <Form.Label>Mobile nubmer</Form.Label>
     <Form.Control type="number" placeholder="Mobile nubmer"/>
   </Form.Group>
@@ -110,42 +109,25 @@ return (
   </Form.Group>
     </Row>
     <Row>
-    <Form.Group className="col" controlId="formGroupEmail">
+    <Form.Group className="col" controlId="formGroupDay">
     <Form.Label>Day</Form.Label>
     <DatePickerComp
         classesWrapper={'form-group datePickerFromTo  d-flex'}
         dayDate={dayDate}
         
         datePickerDayOnChange={datePickerDayOnChange}
-       
       />
   </Form.Group>
-  <Form.Group  className="col"controlId="formGroupEmail">
+  <Form.Group  className="col"controlId="formGroupFrom">
     <Form.Label>From</Form.Label>
     <Form.Control  as="select" defaultValue="Choose..." placeholder="firstName"/>
   </Form.Group>
-  <Form.Group  className="col"controlId="formGroupEmail">
+  <Form.Group  className="col"controlId="formGroupTo">
     <Form.Label>To</Form.Label>
     <Form.Control as="select" defaultValue="Choose..." placeholder="firstName"/>
   </Form.Group>
     </Row>
-
- 
 </Form>
-                  {/* <form>
-                     <input placeholder="firstName"></input> 
-                     <input placeholder="lastName"></input> 
-                     <input placeholder="email"></input> 
-                     <input placeholder="mobileNumber"></input>
-                     <DatePickerComp
-        classesWrapper={'form-group datePickerFromTo padding-0 d-flex'}
-        fromDate={fromDate}
-        toDate={toDate}
-        datePickerFromOnChange={datePickerFromOnChange}
-        datePickerToOnChange={datePickerToOnChange}
-      />
-                     
-                  </form> */}
             </div>
             }
         
