@@ -1,0 +1,43 @@
+.aboutUs-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.church-container{
+height: 51px;
+border-radius: 1px;
+border-color: black;
+border-style: solid;
+padding:8px;
+font-size:31px;
+font-family: 'Segoe UI';
+font-weight:bold;
+color:black;
+width:635px;
+}
+
+.aboutDetailsContainer{
+   display: flex;
+    flex-basis: 45.333333%;
+   flex-direction: column;
+   margin:0px 20px 0px 20px;
+   height:500px;
+}
+
+.aboutImage{
+    width:700px;
+    height: 395px
+}
+.imagesPlace{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.aboutDetails{
+    font-size: 17px;
+    font-family: 'Segoe UI';  
+    color:#7E7E7E;
+}
