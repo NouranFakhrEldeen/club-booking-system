@@ -15,7 +15,7 @@ const ActivityItem=(props)=>{
   let history = useHistory();
   const handleClick=()=>{
    
-   history.push(`activityDetails/${activityId}`)
+    history.push(`activityDetails/${activityId}`)
   }
   const renderButton=()=>{
     if(!isActivityScreen){
@@ -24,13 +24,13 @@ const ActivityItem=(props)=>{
           <p className="details">{cost} EGP</p>
           <div className="seperator"/>
           <div className="hourDetails">
-            <Icon
+            {/* <Icon
               name='time-outline'
               font='ionicons'
               color='green'
               size={20}
               // style={{}}
-            />
+            /> */}
             <p className="details">{time}</p>
 
           </div>
@@ -39,15 +39,15 @@ const ActivityItem=(props)=>{
       )
     }
     return ( 
-    <Link to={{
-      pathname: `activityDetails/${activityId}`,
+      <Link to={{
+        pathname: `activityDetails/${activityId}`,
       
-    }}
-  >
-      <button className="button">
-        {i18n.t('activity.viewActivity')}
-      </button>
-        </Link>
+      }}
+      >
+        <button className="button">
+          {i18n.t('activity.viewActivity')}
+        </button>
+      </Link>
     )
   }
   const renderContent=()=>{

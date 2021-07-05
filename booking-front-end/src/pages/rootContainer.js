@@ -45,7 +45,7 @@ const rootContainer = ({
           <Route exact path='/' component={Home} />
           <Route exact path='/activities' component={Activities} />
           <Route exact path='/activityDetails/:id' component={({ location })=> {location.state 
-          return (<ActivityDetails ></ActivityDetails>)}} />
+            return (<ActivityDetails ></ActivityDetails>)}} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/Gallery' component={GalleryContainer} />
           <Route exact path='/AboutUs' component={About} />
