@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
   var nodemailer = require('nodemailer');
 var { Booking } = require("../models/booking.model");
+var {TimeSlot } = require("../models/timeSlot.model");
 router.post("", async (req, res) => {
   var data = req.body;
   try {
@@ -60,28 +61,40 @@ router.post("", async (req, res) => {
   }
 });
 
-router.post("/getAvailableSlot", async(req, res)=>{
-  let data = req.body;
-  console.log(data);
-  let slotsToBook = await Booking.find({day:data.day})
-  // .where('day').equals(data.day).exec();
-console.log("slotsToBook avilable", slotsToBook)
+// router.post("/getAvailableSlot", async(req, res)=>{
+//   let data = req.body;
+//   console.log(data);
+//   let slotsToBook = await Booking.find({day:data.day})
+//   // .where('day').equals(data.day).exec();
+// console.log("slotsToBook avilable", slotsToBook)
 
-slotsToBook.forEach(async (slot) => {
-  console.log("slot", slot)
-  // if (slot) {
-  //     console.log(`Damn, the slot at ${slot.time} is already booked`); 
-  // } else {
-  //     await Slot.findByIdAndUpdate(
-  //         slot._id,
-  //         {$set: {
+// slotsToBook.forEach(async (slot) => {
+//   console.log("slot", slot)
+//   // if (slot) {
+//   //     console.log(`Damn, the slot at ${slot.time} is already booked`); 
+//   // } else {
+//   //     await Slot.findByIdAndUpdate(
+//   //         slot._id,
+//   //         {$set: {
                
-  //           id: data._id
-  //         }}
-  //     );
-  //     console.log(`Just booked the ${slot.time} slot !`);
-  // }
+//   //           id: data._id
+//   //         }}
+//   //     );
+//   //     console.log(`Just booked the ${slot.time} slot !`);
+//   // }
+// });
+// return res.send(data);
+// })
+router.post("/createTimeSlot", async (req, res) => {
+  var data = req.body;
+  try {
+    var slot  = await TimeSlot.create(data);
+    console.log(slot);
+
+    return res.send("slot added Successfully");
+  } catch (error) {
+    return res.status(400).send(error.message);
+  }
 });
-return res.send(data);
-})
+
 module.exports = router;
