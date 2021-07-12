@@ -7,27 +7,35 @@ router.post("", async (req, res) => {
   var data = req.body;
   try {
       let bookingData = await Booking.findOne({
-        avtivityId: req.body.avtivityId,
+      
         email: req.body.email,
-        firstName:req.body.firstName
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        activityId: req.body.activityId,
+        day: req.body.day,
+        from: req.body.from,
+        to: req.body.to,
+        email: req.body.email,
+        price: req.body.price,
+        
       });
 
       if(bookingData)
       {
-        bookingData
-        .set({
-          id: data.id,
-          day: data.day,
-          from: data.from,
-          to: data.to,
+        // bookingData
+        // .set({
+        //   id: data.id,
+        //   day: data.day,
+        //   from: data.from,
+        //   to: data.to,
          
-        })
-        .save();
-        // return res.send(data);
+        // })
+        // .save();
+         return res.send("you have already booked this activity");
       }
       else{
         Booking.create(data);
-        // return res.send(" booking added Successfully");
+       return res.send(" booking added Successfully");
       }
      
 
@@ -55,7 +63,7 @@ router.post("", async (req, res) => {
           console.log('Email sent: ' + info.response);
         }
       });
-      return res.send(data);
+      // return res.send(data);
   } catch (error) {
     return res.status(400).send(error.message);
   }
