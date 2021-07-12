@@ -80,7 +80,7 @@ const home = ({
       <Header homePage/>
       <Slider></Slider>
       <div className='subscriptionContainer'>
-        <p className='subscriptionTitle'>SUBSCRIPTION PRICES</p>
+        <p className='subscriptionTitle'>{translate('home.subscriptionPrices')}</p>
         <div className='subscriptionPriceContainer'>
           {renderSubscriptionPrices()}
         </div>

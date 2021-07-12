@@ -7,7 +7,7 @@ const items=[{
   description:i18n.t('activity.footballDescription'),
   img:Images.football.default,
   cost:100,
-  time:'1 Hour',
+  time:`1 ${i18n.t('common.hour')}`,
   activityId: 1,
   Images:[Images.football , Images.football2]
 },{
@@ -15,7 +15,7 @@ const items=[{
   description:i18n.t('activity.crossfitDescription'),
   img:Images.crossfit.default,
   cost:900,
-  time:'1 Month',
+  time:`1 ${i18n.t('common.month')}`,
   activityId: 2
 
 },{
@@ -23,7 +23,7 @@ const items=[{
   description:i18n.t('activity.campingDescription'),
   img:Images.camping.default,
   cost:500,
-  time:'1 Day',
+  time:`1 ${i18n.t('common.day')}`,
   activityId: 3
 },{
   title:i18n.t('activity.glee'),

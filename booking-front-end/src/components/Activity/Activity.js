@@ -8,31 +8,25 @@ import i18n from '../../i18n';
 import { useHistory , Link } from 'react-router-dom';
 import "./Activity.scss";
 
+import clock from '../../images/clock.png';
+
 import StyleSheet from "./ActivityLoadingStyles";
 
 const ActivityItem=(props)=>{
   const {image,title,description,isActivityScreen,cost,time,t:translate,isLoading,classes,activityId}=props
   let history = useHistory();
   const handleClick=()=>{
-   
     history.push(`activityDetails/${activityId}`)
   }
   const renderButton=()=>{
     if(!isActivityScreen){
       return (
         <div className="activityBottomDetails">
-          <p className="details">{cost} EGP</p>
+          <p className="details">{cost} {translate('common.egp')} </p>
           <div className="seperator"/>
           <div className="hourDetails">
-            {/* <Icon
-              name='time-outline'
-              font='ionicons'
-              color='green'
-              size={20}
-              // style={{}}
-            /> */}
+            <img src={clock}  alt="" className="clock"/>
             <p className="details">{time}</p>
-
           </div>
 
         </div>
