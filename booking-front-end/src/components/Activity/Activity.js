@@ -4,41 +4,44 @@ import { withTranslation } from 'react-i18next';
 import Icon from 'react-web-vector-icons';
 import Shimmer from "react-shimmer-effect";
 import injectSheet from "react-jss";
-
 import i18n from '../../i18n';
-
+import { useHistory , Link } from 'react-router-dom';
 import "./Activity.scss";
+
+import clock from '../../images/clock.png';
 
 import StyleSheet from "./ActivityLoadingStyles";
 
-const activity=(props)=>{
-  const {image,title,description,isActivityScreen,cost,time,t:translate,isLoading,classes}=props
-
+const ActivityItem=(props)=>{
+  const {image,title,description,isActivityScreen,cost,time,t:translate,isLoading,classes,activityId}=props
+  let history = useHistory();
+  const handleClick=()=>{
+    history.push(`activityDetails/${activityId}`)
+  }
   const renderButton=()=>{
     if(!isActivityScreen){
       return (
         <div className="activityBottomDetails">
-          <p className="details">{cost} EGP</p>
+          <p className="details">{cost} {translate('common.egp')} </p>
           <div className="seperator"/>
           <div className="hourDetails">
-            <Icon
-              name='time-outline'
-              font='ionicons'
-              color='green'
-              size={20}
-              // style={{}}
-            />
+            <img src={clock}  alt="" className="clock"/>
             <p className="details">{time}</p>
-
           </div>
 
         </div>
       )
     }
-    return (
-      <button className="button">
-        {i18n.t('activity.viewActivity')}
-      </button>
+    return ( 
+      <Link to={{
+        pathname: `activityDetails/${activityId}`,
+      
+      }}
+      >
+        <button className="button">
+          {i18n.t('activity.viewActivity')}
+        </button>
+      </Link>
     )
   }
   const renderContent=()=>{
@@ -93,14 +96,14 @@ const activity=(props)=>{
   )
 }
 
-activity.defaultProps={
+ActivityItem.defaultProps={
   isActivityScreen:true,
   cost:0,
   time:null,
   isLoading:false
 }
 
-activity.proptypes={
+ActivityItem.proptypes={
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -110,4 +113,4 @@ activity.proptypes={
   isLoading: PropTypes.bool
 }
 
-export const Activity = (withTranslation()(injectSheet(StyleSheet)(activity)))
+export const Activity = (withTranslation()(injectSheet(StyleSheet)(ActivityItem)))

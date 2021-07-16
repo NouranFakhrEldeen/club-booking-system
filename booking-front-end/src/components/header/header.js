@@ -4,7 +4,7 @@ import { capitalizeFirstWord } from '../../helpers';
 import './header.scss';
 import i18n from '../../i18n';
 
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import {Navbar, Nav} from 'react-bootstrap'
 
 import { withTranslation } from 'react-i18next';
 

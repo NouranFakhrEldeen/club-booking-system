@@ -11,6 +11,11 @@
 .activity-image {
   width: 100%;
 }
+.clock{
+  width:20px;
+  height:20px;
+  margin:0px 10px 8px 10px
+}
 .title {
   font-size: 21px;
   color: #060646;
@@ -70,4 +75,5 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top:15px
 }

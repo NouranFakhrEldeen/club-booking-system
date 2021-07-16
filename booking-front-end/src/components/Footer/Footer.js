@@ -3,17 +3,17 @@ import logo from '../../images/logo.png';
 import './footer.scss';
 function footer() {
   return (
-    <footer class="footer-area footer--light">
-      <div class="footer-big">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 col-sm-12">
-              <div class="footer-widget">
-                <div class="widget-about">
+    <footer className="footer-area footer--light">
+      <div className="footer-big">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3 col-sm-12">
+              <div className="footer-widget">
+                <div className="widget-about">
                   <img src={logo}></img>
-                  <ul class="contact-details">
+                  <ul className="contact-details">
                     <li>
-                      <span class="icon-earphones"></span> © 2020 - All rights
+                      <span className="icon-earphones"></span> © 2020 - All rights
                       reserved
                     </li>
                    
@@ -22,10 +22,10 @@ function footer() {
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-4">
-              <div class="footer-widget">
-                <div class="footer-menu footer-menu--1">
-                  <h3 class="footer-widget-title">CONTACT INFO</h3>
+            <div className="col-md-3 col-sm-4">
+              <div className="footer-widget">
+                <div className="footer-menu footer-menu--1">
+                  <h3 className="footer-widget-title">CONTACT INFO</h3>
                   <ul>
                     <li>
                       <h6>PHONE</h6>
@@ -51,10 +51,10 @@ function footer() {
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-4">
-              <div class="footer-widget">
-                <div class="footer-menu">
-                  <h3 class="footer-widget-title">About Center</h3>
+            <div className="col-md-3 col-sm-4">
+              <div className="footer-widget">
+                <div className="footer-menu">
+                  <h3 className="footer-widget-title">About Center</h3>
                   <ul>
                     <li>
                       <h6>WORKING DAYS/HOURS</h6>
@@ -70,10 +70,10 @@ function footer() {
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-4">
-              <div class="footer-widget">
-                <div class="footer-menu no-padding">
-                  <h3 class="footer-widget-title">Useful Links</h3>
+            <div className="col-md-3 col-sm-4">
+              <div className="footer-widget">
+                <div className="footer-menu no-padding">
+                  <h3 className="footer-widget-title">Useful Links</h3>
                   <ul>
                     <li>
                       <a href="#Activities">Activities</a>
